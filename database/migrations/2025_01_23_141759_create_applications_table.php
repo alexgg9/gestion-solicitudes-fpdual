@@ -11,19 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('solicitudes', function (Blueprint $table) {
+        Schema::create('applications', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_empresa');
+            $table->string('company_name');
             $table->string('nif')->unique();
-            $table->string('actividad_empresa');
+            $table->string('company_activity');
             $table->integer('smr_1')->default(0);
             $table->integer('smr_2')->default(0);
-            $table->integer('dam_1')->default(0); 
-            $table->integer('dam_2')->default(0); 
-            $table->integer('daw_1')->default(0); 
-            $table->integer('daw_2')->default(0); 
-            $table->text('observaciones')->nullable();
-            $table->string('modalidad');
+            $table->integer('dam_1')->default(0);
+            $table->integer('dam_2')->default(0);
+            $table->integer('daw_1')->default(0);
+            $table->integer('daw_2')->default(0);
+            $table->text('observations')->nullable();
+            $table->string('modality');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('solicitudes');
+        Schema::dropIfExists('applications');
     }
 };
