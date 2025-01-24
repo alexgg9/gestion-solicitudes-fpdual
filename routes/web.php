@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SolicitudController;
+use App\Http\Controllers\ApplicationController;
 
-Route::resource('solicitudes', SolicitudController::class);
+
+Route::resource('applications', ApplicationController::class);
