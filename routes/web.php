@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ApplicationController;
-use App\Http\Controllers\ProfessorController;
+use App\Http\Controllers\SolicitudController;
 
-Route::resource('applications', ApplicationController::class);
-Route::resource('professors', ProfessorController::class);
+Route::resource('solicitudes', SolicitudController::class);
+Route::resource('companies', CompanyController::class);
