@@ -20,13 +20,13 @@
 
                             <!-- Telefono 1 -->
                             <div class="form-group mb-3">
-                                <label for="telefono1" class="form-label">NIF</label>
+                                <label for="telefono1" class="form-label">Telefono</label>
                                 <input type="text" name="telefono1" id="telefono1" class="form-control" required>
                             </div>
 
                             <!-- Telefono 2 -->
                             <div class="form-group mb-3">
-                                <label for="telefono2" class="form-label">NIF</label>
+                                <label for="telefono2" class="form-label">Telefono</label>
                                 <input type="text" name="telefono2" id="telefono2" class="form-control">
                             </div>
 
@@ -62,7 +62,7 @@
 
                             <!-- Codigo Postal -->
                             <div class="form-group mb-3">
-                                <label for="cp" class="form-label">Observaciones</label>
+                                <label for="cp" class="form-label">Codigo Postal</label>
                                 <input name="cp" id="cp" class="form-control" required></input>
                             </div>
 
@@ -79,10 +79,13 @@
                                 <input type="text" name="dni_gerente" id="dni_gerente" class="form-control" required>
                             </div>
 
-                            <!-- Modalidad -->
                             <div class="form-group mb-3">
-                                <label for="modalidad" class="form-label">Modalidad</label>
-                                <input type="text" name="modalidad" id="modalidad" class="form-control" required>
+                                <label for="modality" class="form-label">Modalidad</label>
+                                <select name="modality" id="modality" class="form-control" required>
+                                    <option value="Presencial">Presencial</option>
+                                    <option value="Remoto">Remoto</option>
+                                    <option value="Híbrido">Híbrido</option>
+                                </select>
                             </div>
 
                             <!-- Botón de Envío -->
