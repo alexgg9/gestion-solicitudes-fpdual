@@ -24,7 +24,6 @@ class ApplicationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'company_name' => 'required|string|max:255',
             'nif' => [
                 'required',
                 'string',
@@ -40,6 +39,7 @@ class ApplicationRequest extends FormRequest
             'daw_2' => 'required|integer|min:0',
             'observations' => 'nullable|string',
             'modality' => 'required|string|in:Presencial,Remoto,Híbrido',
+            'company_id' => 'required|integer|exists:companies,id',
         ];
     }
 

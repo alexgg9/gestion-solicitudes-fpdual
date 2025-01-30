@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Application;
 use App\Http\Requests\ApplicationRequest;
+use App\Models\Company;
 
 class ApplicationController extends Controller
 {
@@ -12,6 +13,7 @@ class ApplicationController extends Controller
      */
     public function index()
     {
+
         $applications = Application::all();
         return view('applications.index', compact('applications'));
     }
@@ -21,7 +23,8 @@ class ApplicationController extends Controller
      */
     public function create()
     {
-        return view('applications.create');
+        $companies = Company::all();
+        return view('applications.create', compact('companies'));
     }
 
     /**
@@ -29,6 +32,7 @@ class ApplicationController extends Controller
      */
     public function store(ApplicationRequest $request)
     {
+
         Application::create($request->validated());
 
         return redirect()->route('applications.index')
@@ -50,10 +54,16 @@ class ApplicationController extends Controller
      */
     public function edit($id)
     {
-        $application = Application::find($id);
 
-        return view('applications.edit', compact('application'));
+        $application = Application::findOrFail($id);
+
+
+        $company_id = $application->company_id;
+
+
+        return view('applications.edit', compact('application', 'company_id'));
     }
+
 
     /**
      * Update the specified resource in storage.

@@ -14,64 +14,64 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Nombre de la Empresa:</label>
-                                    <p class="form-control-static">{{ $company->nombre_empresa }}</p>
+                                    <p class="mb-0">{{ $company->name }}</p>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label fw-bold">Telefono 1:</label>
-                                    <p class="form-control-static">{{ $company->telefono1 }}</p>
+                                    <label class="form-label fw-bold">Teléfono 1:</label>
+                                    <p class="mb-0">{{ $company->phone1 }}</p>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label fw-bold">Telefono 2:</label>
-                                    <p class="form-control-static">{{ $company->telefono2 }}</p>
+                                    <label class="form-label fw-bold">Teléfono 2:</label>
+                                    <p class="mb-0">{{ $company->phone2 }}</p>
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Email:</label>
-                                    <p class="form-control-static">{{ $company->email }}</p>
+                                    <p class="mb-0">{{ $company->email }}</p>
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">NIF:</label>
-                                    <p class="form-control-static">{{ $company->nif }}</p>
+                                    <p class="mb-0">{{ $company->nif }}</p>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label fw-bold">Direccion:</label>
-                                    <p class="form-control-static">{{ $company->direccion }}</p>
+                                    <label class="form-label fw-bold">Dirección:</label>
+                                    <p class="mb-0">{{ $company->address }}</p>
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Localidad:</label>
-                                    <p class="form-control-static">{{ $company->localidad }}</p>
+                                    <p class="mb-0">{{ $company->city }}</p>
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Provincia:</label>
-                                    <p class="form-control-static">{{ $company->provincia }}</p>
+                                    <p class="mb-0">{{ $company->state }}</p>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label fw-bold">Codigo Postal:</label>
-                                    <p class="form-control-static">{{ $company->cp }}</p>
+                                    <label class="form-label fw-bold">Código Postal:</label>
+                                    <p class="mb-0">{{ $company->postal_code }}</p>
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Nombre del Gerente:</label>
-                                    <p class="form-control-static">{{ $company->nombre_gerente }}</p>
+                                    <p class="mb-0">{{ $company->manager_name }}</p>
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">DNI del Gerente:</label>
-                                    <p class="form-control-static">{{ $company->dni_gerente }}</p>
+                                    <p class="mb-0">{{ $company->manager_dni }}</p>
                                 </div>
 
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Modalidad:</label>
-                                    <p class="form-control-static">{{ $company->modalidad }}</p>
+                                    <p class="mb-0">{{ $company->modality }}</p>
                                 </div>
                             </div>
                         </div>

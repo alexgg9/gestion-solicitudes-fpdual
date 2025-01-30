@@ -11,7 +11,6 @@ class Application extends Model
     protected $table = 'applications';
 
     protected $fillable = [
-        'company_name',
         'nif',
         'company_activity',
         'smr_1',
@@ -22,5 +21,11 @@ class Application extends Model
         'daw_2',
         'observations',
         'modality',
+        'company_id',
     ];
+
+    function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }

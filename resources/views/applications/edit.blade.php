@@ -20,12 +20,16 @@
                             @endif
                             @csrf
                             @method('PUT')
+                            
+                            <!-- Campo oculto para el ID de la empresa -->
+                            <input type="hidden" name="company_id" value="{{ $company_id }}">
 
-                            <!-- Nombre de la Empresa -->
+                            <!-- Nombre de la empresa (solo para mostrar) -->
                             <div class="form-group mb-3">
-                                <label for="company_name">Nombre de la Empresa</label>
-                                <input type="text" name="company_name" id="company_name" class="form-control" value="{{ $application->company_name }}" required>
+                                <label for="company_name" class="form-label">Nombre de la empresa</label>
+                                <input type="text" id="company_name" class="form-control" value="{{ $application->company->name }}" disabled>
                             </div>
+                            
 
                             <div class="form-group mb-3">
                                 <label for="nif" class="form-label">NIF</label>
