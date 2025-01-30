@@ -5,29 +5,28 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Crear Nueva Empresa</div>
+                    <div class="card-header">Create New Company</div>
 
                     <div class="card-body">
                         <form action="{{ route('companies.store') }}" method="POST">
                             @csrf
 
-                            <!-- nombre de la Empresa-->
+                            <!-- Company Name -->
                             <div class="form-group mb-3">
-                                <label for="nombre_empresa" class="form-label">Nombre de la empresa</label>
-                                <input type="text" name="nombre_empresa" id="nombre_empresa" class="form-control"
-                                    required>
+                                <label for="name" class="form-label">Company Name</label>
+                                <input type="text" name="name" id="name" class="form-control" required>
                             </div>
 
-                            <!-- Telefono 1 -->
+                            <!-- Phone 1 -->
                             <div class="form-group mb-3">
-                                <label for="telefono1" class="form-label">Telefono</label>
-                                <input type="text" name="telefono1" id="telefono1" class="form-control" required>
+                                <label for="phone1" class="form-label">Phone 1</label>
+                                <input type="text" name="phone1" id="phone1" class="form-control" required>
                             </div>
 
-                            <!-- Telefono 2 -->
+                            <!-- Phone 2 -->
                             <div class="form-group mb-3">
-                                <label for="telefono2" class="form-label">Telefono</label>
-                                <input type="text" name="telefono2" id="telefono2" class="form-control">
+                                <label for="phone2" class="form-label">Phone 2</label>
+                                <input type="text" name="phone2" id="phone2" class="form-control">
                             </div>
 
                             <!-- Email -->
@@ -42,45 +41,45 @@
                                 <input type="text" name="nif" id="nif" class="form-control" required>
                             </div>
 
-                            <!-- Dirección -->
+                            <!-- Address -->
                             <div class="form-group mb-3">
-                                <label for="direccion" class="form-label">Dirección</label>
-                                <input type="text" name="direccion" id="direccion" class="form-control" required>
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" name="address" id="address" class="form-control" required>
                             </div>
 
-                            <!-- Localidad -->
+                            <!-- City -->
                             <div class="form-group mb-3">
-                                <label for="localidad" class="form-label">Localidad</label>
-                                <input type="text" name="localidad" id="localidad" class="form-control" required>
+                                <label for="city" class="form-label">City</label>
+                                <input type="text" name="city" id="city" class="form-control" required>
                             </div>
 
-                            <!-- Provincia -->
+                            <!-- State -->
                             <div class="form-group mb-3">
-                                <label for="provincia" class="form-label">Provincia</label>
-                                <input type="text" name="provincia" id="provincia" class="form-control" required>
+                                <label for="state" class="form-label">State</label>
+                                <input type="text" name="state" id="state" class="form-control" required>
                             </div>
 
-                            <!-- Codigo Postal -->
+                            <!-- Postal Code -->
                             <div class="form-group mb-3">
-                                <label for="cp" class="form-label">Codigo Postal</label>
-                                <input name="cp" id="cp" class="form-control" required></input>
+                                <label for="postal_code" class="form-label">Postal Code</label>
+                                <input name="postal_code" id="postal_code" class="form-control" required></input>
                             </div>
 
-                            <!-- Nombre del Gerente -->
+                            <!-- Manager Name -->
                             <div class="form-group mb-3">
-                                <label for="nombre_gerente" class="form-label">Nombre del Gerente</label>
-                                <input type="text" name="nombre_gerente" id="nombre_gerente" class="form-control"
-                                    required>
+                                <label for="manager_name" class="form-label">Manager Name</label>
+                                <input type="text" name="manager_name" id="manager_name" class="form-control" required>
                             </div>
 
-                            <!-- DNI del Gerente -->
+                            <!-- Manager DNI -->
                             <div class="form-group mb-3">
-                                <label for="dni_gerente" class="form-label">DNI del Gerente</label>
-                                <input type="text" name="dni_gerente" id="dni_gerente" class="form-control" required>
+                                <label for="manager_dni" class="form-label">Manager DNI</label>
+                                <input type="text" name="manager_dni" id="manager_dni" class="form-control" required>
                             </div>
 
+                            <!-- Modality -->
                             <div class="form-group mb-3">
-                                <label for="modality" class="form-label">Modalidad</label>
+                                <label for="modality" class="form-label">Modality</label>
                                 <select name="modality" id="modality" class="form-control" required>
                                     <option value="Presencial">Presencial</option>
                                     <option value="Remoto">Remoto</option>
@@ -88,10 +87,10 @@
                                 </select>
                             </div>
 
-                            <!-- Botón de Envío -->
+                            <!-- Submit Button -->
                             <div class="form-group mb-3">
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                                <a href="{{ route('companies.index') }}" class="btn btn-secondary">Cancelar</a>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <a href="{{ route('companies.index') }}" class="btn btn-secondary">Cancel</a>
                             </div>
                         </form>
                     </div>
