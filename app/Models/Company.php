@@ -9,17 +9,22 @@ class Company extends Model
     protected $table = 'companies';
 
     protected $fillable = [
-        'nombre_empresa',
-        'telefono1',
-        'telefono2',
+        'company_name',
+        'phone1',
+        'phone2',
         'email',
         'nif',
-        'direccion',
-        'localidad',
-        'provincia',
-        'cp',
-        'nombre_gerente',
-        'dni_gerente',
-        'modalidad'
+        'address',
+        'town',
+        'province',
+        'postal_code',
+        'manager_name',
+        'manager_dni',
+        'modality',
     ];
+
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
+    }
 }
