@@ -8,8 +8,21 @@ class Company extends Model
 {
     protected $table = 'companies';
 
-    protected $guarded = [];
-
+    protected $fillable = [
+        'company_name',
+        'phone1',
+        'phone2',
+        'email',
+        'nif',
+        'address',
+        'town',
+        'province',
+        'postal_code',
+        'manager_name',
+        'manager_dni',
+        'modality',
+    ];
+  
     public function applications()
     {
         return $this->hasMany(Application::class);
