@@ -5,7 +5,7 @@
         <h1>Companies</h1>
         <a href="{{ route('companies.create') }}" class="btn btn-primary">Nueva Empresa</a>
     </div>
-    
+
     <table class="table">
         <thead>
             <tr>
@@ -14,7 +14,7 @@
                 <th>Email</th>
                 <th>NIF</th>
                 <th>Address</th>
-                <th>City</th>
+                <th>Town</th>
                 <th>Postal Code</th>
                 <th>Manager Name</th>
                 <th>Actions</th>
@@ -28,7 +28,7 @@
                     <td>{{ $company->email }}</td>
                     <td>{{ $company->nif }}</td>
                     <td>{{ $company->address }}</td>
-                    <td>{{ $company->city }}</td>
+                    <td>{{ $company->town }}</td>
                     <td>{{ $company->postal_code }}</td>
                     <td>{{ $company->manager_name }}</td>
                     <td>
@@ -37,7 +37,8 @@
                         <form action="{{ route('companies.destroy', $company->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this company?')">Delete</button>
+                            <button type="submit" class="btn btn-danger"
+                                onclick="return confirm('Are you sure you want to delete this company?')">Delete</button>
                         </form>
                     </td>
                 </tr>

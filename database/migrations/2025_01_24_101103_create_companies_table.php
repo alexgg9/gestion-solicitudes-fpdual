@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('nif')->unique();
             $table->string('address');
-            $table->string('city');
-            $table->string('state');
+            $table->string('town');
+            $table->string('province');
             $table->string('postal_code');
             $table->string('manager_name');
             $table->string('manager_dni');

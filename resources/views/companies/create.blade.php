@@ -47,16 +47,16 @@
                                 <input type="text" name="address" id="address" class="form-control" required>
                             </div>
 
-                            <!-- City -->
+                            <!-- Town -->
                             <div class="form-group mb-3">
-                                <label for="city" class="form-label">City</label>
-                                <input type="text" name="city" id="city" class="form-control" required>
+                                <label for="town" class="form-label">Town</label>
+                                <input type="text" name="town" id="town" class="form-control" required>
                             </div>
 
-                            <!-- State -->
+                            <!-- Province -->
                             <div class="form-group mb-3">
-                                <label for="state" class="form-label">State</label>
-                                <input type="text" name="state" id="state" class="form-control" required>
+                                <label for="province" class="form-label">Province</label>
+                                <input type="text" name="province" id="province" class="form-control" required>
                             </div>
 
                             <!-- Postal Code -->

@@ -44,12 +44,12 @@
 
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Localidad:</label>
-                                    <p class="mb-0">{{ $company->city }}</p>
+                                    <p class="mb-0">{{ $company->town }}</p>
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Provincia:</label>
-                                    <p class="mb-0">{{ $company->state }}</p>
+                                    <p class="mb-0">{{ $company->town }}</p>
                                 </div>
 
                                 <div class="mb-3">

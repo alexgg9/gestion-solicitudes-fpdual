@@ -9,7 +9,7 @@ class Company extends Model
     protected $table = 'companies';
 
     protected $fillable = [
-        'company_name',
+        'name',
         'phone1',
         'phone2',
         'email',
@@ -22,7 +22,7 @@ class Company extends Model
         'manager_dni',
         'modality',
     ];
-  
+
     public function applications()
     {
         return $this->hasMany(Application::class);

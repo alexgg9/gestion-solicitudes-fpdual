@@ -24,7 +24,7 @@ class CompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'company_name' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
             'phone1' => 'required|string|max:20',
             'phone2' => 'nullable|string|max:20',
             'email' => 'required|email|max:255',
@@ -42,7 +42,18 @@ class CompanyRequest extends FormRequest
     public function messages()
     {
         return [
-            'nombre_empresa.required' => 'El nombre de la empresa es obligatorio.',
+            'name.required' => 'El nombre de la empresa es obligatorio.',
+            'phone1.required' => 'El teléfono de la empresa es obligatorio.',
+            'email.required' => 'El correo electrónico de la empresa es obligatorio.',
+            'nif.required' => 'El NIF de la empresa es obligatorio.',
+            'address.required' => 'La dirección de la empresa es obligatoria.',
+            'town.required' => 'La localidad de la empresa es obligatoria.',
+            'province.required' => 'La provincia de la empresa es obligatoria.',
+            'postal_code.required' => 'El código postal de la empresa es obligatorio.',
+            'manager_name.required' => 'El nombre del responsable de la empresa es obligatorio.',
+            'manager_dni.required' => 'El DNI del responsable de la empresa es obligatorio.',
+            'modality.required' => 'La modalidad de la empresa es obligatoria.',
+            'modality.in' => 'La modalidad de la empresa no es válida.',
             'nif.unique' => 'El NIF ya está registrado.',
         ];
     }
