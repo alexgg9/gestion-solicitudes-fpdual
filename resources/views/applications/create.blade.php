@@ -19,12 +19,20 @@
                                     </ul>
                                 </div>
                             @endif
-
-                            <!-- Nombre de la Empresa -->
+                            
                             <div class="form-group mb-3">
-                                <label for="company_name" class="form-label">Nombre de la Empresa</label>
-                                <input type="text" name="company_name" id="company_name" class="form-control" required>
+                                <label for="company_id" class="form-label">Nombre de la empresa</label>
+                                <select name="company_id" id="company_id" class="form-control" required>
+                                    <option value="">Seleccione una empresa</option>
+                                    @foreach($companies as $company)
+                                        <option value="{{ $company->id }}" {{ old('company_id') == $company->id ? 'selected' : '' }}>
+                                            {{ $company->name }}  
+                                        </option>
+                                    @endforeach
+                                </select>
                             </div>
+
+                            
 
                             <!-- NIF -->
                             <div class="form-group mb-3">

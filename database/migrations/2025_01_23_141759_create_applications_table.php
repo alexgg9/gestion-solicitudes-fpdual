@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('daw_2')->default(0);
             $table->text('observations')->nullable();
             $table->string('modality');
+            $table->foreignId('company_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

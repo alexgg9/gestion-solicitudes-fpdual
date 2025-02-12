@@ -24,18 +24,18 @@ class CompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nombre_empresa' => 'required|string|max:255',
-            'telefono1' => 'required|string|max:20',
-            'telefono2' => 'nullable|string|max:20',
+            'company_name' => 'required|string|max:255',
+            'phone1' => 'required|string|max:20',
+            'phone2' => 'nullable|string|max:20',
             'email' => 'required|email|max:255',
             'nif' => 'string|max:20',
-            'direccion' => 'required|string|max:255',
-            'localidad' => 'required|string|max:255',
-            'provincia' => 'required|string|max:255',
-            'cp' => 'required|string|max:10',
-            'nombre_gerente' => 'required|string|max:255',
-            'dni_gerente' => 'required|string|max:20',
-            'modalidad' => 'required|string|in:Presencial,Remoto,Híbrido',
+            'address' => 'required|string|max:255',
+            'town' => 'required|string|max:255',
+            'province' => 'required|string|max:255',
+            'postal_code' => 'required|string|max:10',
+            'manager_name' => 'required|string|max:255',
+            'manager_dni' => 'required|string|max:20',
+            'modality' => 'required|string|in:Presencial,Remoto,Hibrido',
         ];
     }
 

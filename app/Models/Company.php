@@ -22,7 +22,7 @@ class Company extends Model
         'manager_dni',
         'modality',
     ];
-
+  
     public function applications()
     {
         return $this->hasMany(Application::class);

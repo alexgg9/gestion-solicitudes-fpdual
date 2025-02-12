@@ -18,7 +18,7 @@
         <tbody>
             @foreach($applications as $application)
                 <tr>
-                    <td>{{ $application->company_name }}</td>
+                    <td>{{ $application->company->name }}</td>
                     <td>{{ $application->nif }}</td>
                     <td>{{ $application->smr_1 + $application->smr_2 + $application->dam_1 + $application->dam_2 + $application->daw_1 + $application->daw_2 }}</td>
                     <td>{{ $application->modality }}</td>

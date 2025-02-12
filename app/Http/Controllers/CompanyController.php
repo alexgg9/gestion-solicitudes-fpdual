@@ -10,7 +10,7 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = Company::all();
-        return view('companies.index', compact('Companies'));
+        return view('companies.index', compact('companies'));
     }
 
     public function create()

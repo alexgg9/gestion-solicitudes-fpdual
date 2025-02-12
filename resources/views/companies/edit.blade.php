@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Editar Empresa</div>
+                    <div class="card-header">Edit Company</div>
 
                     <div class="card-body">
                         <form action="{{ route('companies.update', $company->id) }}" method="POST">
@@ -21,97 +21,83 @@
                             @csrf
                             @method('PUT')
 
-                            <!-- Nombre de la Empresa -->
+                            <!-- Company Name -->
                             <div class="form-group mb-3">
-                                <label for="nombre_empresa">Nombre de la Empresa</label>
-                                <input type="text" name="nombre_empresa" id="nombre_empresa" class="form-control"
-                                    value="{{ $company->nombre_empresa }}" required>
+                                <label for="name">Company Name</label>
+                                <input type="text" name="name" id="name" class="form-control" value="{{ $company->name }}" required>
                             </div>
 
-                            <!-- Teléfono 1 -->
+                            <!-- Phone 1 -->
                             <div class="form-group mb-3">
-                                <label for="telefono1">Teléfono 1</label>
-                                <input type="text" name="telefono1" id="telefono1" class="form-control"
-                                    value="{{ $company->telefono1 }}" required>
+                                <label for="phone1">Phone 1</label>
+                                <input type="text" name="phone1" id="phone1" class="form-control" value="{{ $company->phone1 }}" required>
                             </div>
 
-                            <!-- Teléfono 2 -->
+                            <!-- Phone 2 -->
                             <div class="form-group mb-3">
-                                <label for="telefono2">Teléfono 2</label>
-                                <input type="text" name="telefono2" id="telefono2" class="form-control"
-                                    value="{{ $company->telefono2 }}">
+                                <label for="phone2">Phone 2</label>
+                                <input type="text" name="phone2" id="phone2" class="form-control" value="{{ $company->phone2 }}">
                             </div>
 
                             <!-- Email -->
                             <div class="form-group mb-3">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" id="email" class="form-control"
-                                    value="{{ $company->email }}" required>
+                                <input type="email" name="email" id="email" class="form-control" value="{{ $company->email }}" required>
                             </div>
 
                             <!-- NIF -->
                             <div class="form-group mb-3">
                                 <label for="nif">NIF</label>
-                                <input type="text" name="nif" id="nif" class="form-control"
-                                    value="{{ $company->nif }}" required>
+                                <input type="text" name="nif" id="nif" class="form-control" value="{{ $company->nif }}" required>
                             </div>
 
-                            <!-- Dirección -->
+                            <!-- Address -->
                             <div class="form-group mb-3">
-                                <label for="direccion">Dirección</label>
-                                <input type="text" name="direccion" id="direccion" class="form-control"
-                                    value="{{ $company->direccion }}" required>
+                                <label for="address">Address</label>
+                                <input type="text" name="address" id="address" class="form-control" value="{{ $company->address }}" required>
                             </div>
 
-                            <!-- Localidad -->
+                            <!-- City -->
                             <div class="form-group mb-3">
-                                <label for="localidad">Localidad</label>
-                                <input type="text" name="localidad" id="localidad" class="form-control"
-                                    value="{{ $company->localidad }}" required>
+                                <label for="city">City</label>
+                                <input type="text" name="city" id="city" class="form-control" value="{{ $company->city }}" required>
                             </div>
 
-                            <!-- Provincia -->
+                            <!-- State -->
                             <div class="form-group mb-3">
-                                <label for="provincia">Provincia</label>
-                                <input type="text" name="provincia" id="provincia" class="form-control"
-                                    value="{{ $company->provincia }}" required>
+                                <label for="state">State</label>
+                                <input type="text" name="state" id="state" class="form-control" value="{{ $company->state }}" required>
                             </div>
 
-                            <!-- Código Postal -->
+                            <!-- Postal Code -->
                             <div class="form-group mb-3">
-                                <label for="cp">Código Postal</label>
-                                <input type="text" name="cp" id="cp" class="form-control"
-                                    value="{{ $company->cp }}" required>
+                                <label for="postal_code">Postal Code</label>
+                                <input type="text" name="postal_code" id="postal_code" class="form-control" value="{{ $company->postal_code }}" required>
                             </div>
 
-                            <!-- Nombre del Gerente -->
+                            <!-- Manager Name -->
                             <div class="form-group mb-3">
-                                <label for="nombre_gerente">Nombre del Gerente</label>
-                                <input type="text" name="nombre_gerente" id="nombre_gerente" class="form-control"
-                                    value="{{ $company->nombre_gerente }}" required>
+                                <label for="manager_name">Manager Name</label>
+                                <input type="text" name="manager_name" id="manager_name" class="form-control" value="{{ $company->manager_name }}" required>
                             </div>
 
-                            <!-- DNI del Gerente -->
+                            <!-- Manager DNI -->
                             <div class="form-group mb-3">
-                                <label for="dni_gerente">DNI del Gerente</label>
-                                <input type="text" name="dni_gerente" id="dni_gerente" class="form-control"
-                                    value="{{ $company->dni_gerente }}" required>
+                                <label for="manager_dni">Manager DNI</label>
+                                <input type="text" name="manager_dni" id="manager_dni" class="form-control" value="{{ $company->manager_dni }}" required>
                             </div>
 
-                            <!-- Modalidad -->
+                            <!-- Modality -->
                             <div class="form-group mb-3">
-                                <label for="modalidad">Modalidad</label>
-                                <select name="modalidad" id="modalidad" class="form-control" required>
-                                    <option value="Presencial" {{ $company->modalidad == 'Presencial' ? 'selected' : '' }}>
-                                        Presencial</option>
-                                    <option value="Remoto" {{ $company->modalidad == 'Remoto' ? 'selected' : '' }}>Remoto
-                                    </option>
-                                    <option value="Híbrido" {{ $company->modalidad == 'Híbrido' ? 'selected' : '' }}>
-                                        Híbrido</option>
+                                <label for="modality">Modality</label>
+                                <select name="modality" id="modality" class="form-control" required>
+                                    <option value="Presencial" {{ $company->modality == 'Presencial' ? 'selected' : '' }}>Presencial</option>
+                                    <option value="Remoto" {{ $company->modality == 'Remoto' ? 'selected' : '' }}>Remoto</option>
+                                    <option value="Híbrido" {{ $company->modality == 'Híbrido' ? 'selected' : '' }}>Híbrido</option>
                                 </select>
                             </div>
 
-                            <!-- Botón de Envío -->
+                            <!-- Submit Button -->
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary">Actualizar</button>
                                 <a href="{{ route('companies.index') }}" class="btn btn-secondary">Cancelar</a>
