@@ -32,6 +32,7 @@ class ProfessorRequest extends FormRequest
             'name' => 'required|string|max:255',
             'surname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
+            'password' => 'required|string|min:7',
             'phone' => 'required|integer|min:0',
             'department' => 'required|string|max:255',
         ];

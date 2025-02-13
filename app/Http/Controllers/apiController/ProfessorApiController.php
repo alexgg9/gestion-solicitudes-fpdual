@@ -5,7 +5,6 @@ namespace App\Http\Controllers\apiController;
 use App\Http\Controllers\Controller;
 use App\Models\Professor;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Requests\ProfessorRequest;
 use App\Http\Resources\ProfessorResource;
@@ -19,7 +18,7 @@ class ProfessorApiController extends Controller
      */
     public function index() : JsonResource
     {
-        return JsonResource::collection(Professor::all());
+        return ProfessorResource::collection(Professor::all());
     }
     
     /**
