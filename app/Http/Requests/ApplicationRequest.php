@@ -24,13 +24,9 @@ class ApplicationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nif' => [
-                'required',
-                'string',
-                'max:20',
-                Rule::unique('applications')->ignore($this->application), 
-            ],
+            'nif' => 'required|string|max:9',
             'company_activity' => 'required|string|max:255',
+            'company_name' => 'required|string|max:255',
             'smr_1' => 'required|integer|min:0',
             'smr_2' => 'required|integer|min:0',
             'dam_1' => 'required|integer|min:0',
@@ -38,7 +34,7 @@ class ApplicationRequest extends FormRequest
             'daw_1' => 'required|integer|min:0',
             'daw_2' => 'required|integer|min:0',
             'observations' => 'nullable|string',
-            'modality' => 'required|string|in:Presencial,Remoto,Híbrido',
+            'modality' => 'required|string|in:presencial,remoto,híbrido',
             'company_id' => 'required|integer|exists:companies,id',
         ];
     }

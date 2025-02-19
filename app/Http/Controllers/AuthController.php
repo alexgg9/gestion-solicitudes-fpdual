@@ -40,33 +40,33 @@ class AuthController extends Controller
 
     public function loginUser(LoginRequest $request)
     {
-    try {
-        // Obtener credenciales validadas
-        $credentials = $request->validated();
+        try {
+            // Obtener credenciales validadas
+            $credentials = $request->validated();
 
-        // Intentar autenticación
-        if (!Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password']])) {
+            // Intentar autenticación
+            if (!Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password']])) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Email & password do not match our records'
+                ], 401);
+            }
+
+            // Obtener usuario autenticado
+            $professor = Professor::where('email', $credentials['email'])->firstOrFail();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Professor logged in successfully',
+                'token' => $professor->createToken("API TOKEN")->plainTextToken
+            ], 200);
+
+        } catch (\Exception $e) {
             return response()->json([
                 'status' => false,
-                'message' => 'Email & password do not match our records'
-            ], 401);
+                'message' => 'Login failed',
+                'error' => $e->getMessage()
+            ], 500);
         }
-
-        // Obtener usuario autenticado
-        $professor = Professor::where('email', $credentials['email'])->firstOrFail();
-
-        return response()->json([
-            'status' => true,
-            'message' => 'Professor logged in successfully',
-            'token' => $professor->createToken("API TOKEN")->plainTextToken
-        ], 200);
-
-    } catch (\Exception $e) {
-        return response()->json([
-            'status' => false,
-            'message' => 'Login failed',
-            'error' => $e->getMessage()
-        ], 500);
     }
-}
-}
+}   

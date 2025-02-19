@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
             $table->string('company_name');
-            $table->string('nif')->unique();
+            $table->string('nif');
             $table->string('company_activity');
             $table->integer('smr_1')->default(0);
             $table->integer('smr_2')->default(0);
