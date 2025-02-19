@@ -14,7 +14,7 @@ Route::post('/register', [AuthController::class, 'store'])->name('register');
 Route::post('/login', [AuthController::class, 'loginUser'])->name('login');
 
 // Rutas protegidas con autenticación
-Route::middleware('auth:sanctum')->group(function () {
+    Route::middleware('auth:sanctum')->group(function () {
     Route::resource('application', ApplicationApiController::class);
     Route::resource('professor', ProfessorApiController::class);
     Route::resource('company', CompanyApiController::class);
