@@ -58,7 +58,8 @@ class AuthController extends Controller
             return response()->json([
                 'status' => true,
                 'message' => 'Professor logged in successfully',
-                'token' => $professor->createToken("API TOKEN")->plainTextToken
+                'token' => $professor->createToken("API TOKEN")->plainTextToken,
+                'professor_id' => $professor->id,
             ], 200);
 
         } catch (\Exception $e) {

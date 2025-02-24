@@ -42,6 +42,17 @@ class CompanyApiController extends Controller
         return new CompanyResource($company);
     }
 
+    public function showByNif(string $nif): JsonResource
+    {
+        $company = Company::where('nif', $nif)->first();
+        if (!$company) {
+            return response()->json([
+                'message' => 'Empresa no encontrada.',
+            ], 404);
+        }
+        return new CompanyResource($company);
+    }
+
 
     /**
      * Update the specified resource in storage.
