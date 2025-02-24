@@ -21,6 +21,7 @@ class ProfessorFactory extends Factory
             'name' => $this->faker->firstName(),
             'surname' => $this->faker->lastName(),
             'email' => $this->faker->unique()->safeEmail(),
+            'password' => bcrypt('password'),
             'phone' => $this->faker->numerify('#########'), 
             'department' => $this->faker->randomElement([
                 'Idiomas', 'Informática'
