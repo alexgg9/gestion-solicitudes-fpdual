@@ -7,6 +7,7 @@ use App\Models\Professor;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Requests\ProfessorRequest;
+use App\Http\Requests\UpdateProfessorRequest;
 use App\Http\Resources\ProfessorResource;
 
 
@@ -46,9 +47,8 @@ class ProfessorApiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ProfessorRequest $request, string $id)
+    public function update(UpdateProfessorRequest $request, string $id) : JsonResponse
     {
-        //
         $professor = Professor::find($id);
         $professor->update($request->all());
         return response()->json([
@@ -56,6 +56,7 @@ class ProfessorApiController extends Controller
             'data' => new ProfessorResource($professor)
         ], 200);
     }
+
 
     /**
      * Remove the specified resource from storage.
