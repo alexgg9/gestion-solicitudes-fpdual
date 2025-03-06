@@ -54,11 +54,11 @@ class CompanyTest extends TestCase
     /** @test */
     public function test_show_company(): void
     {
-        // Creamos un profesor para autenticar
+        
         $professor = Professor::factory()->create();
         $token = $professor->createToken('TestToken')->plainTextToken;
 
-        // Creamos una empresa para probar la obtención
+        
         $company = Company::create([
             'name' => 'Tech Corp',
             'phone1' => '123456789',
@@ -74,12 +74,12 @@ class CompanyTest extends TestCase
             'modality' => 'Remote',
         ]);
 
-        // Realizamos la solicitud GET para obtener los detalles de la empresa
+        
         $response = $this->getJson("/api/company/{$company->id}", [
-            'Authorization' => 'Bearer ' . $token // Incluimos el token del profesor
+            'Authorization' => 'Bearer ' . $token 
         ]);
 
-        // Verificamos que la respuesta sea correcta
+        
         $response->assertStatus(200)
             ->assertJsonFragment([
                 'name' => 'Tech Corp',
@@ -91,11 +91,11 @@ class CompanyTest extends TestCase
     /** @test */
     public function test_update_company(): void
     {
-        // Creamos un profesor para autenticar
+        
         $professor = Professor::factory()->create();
         $token = $professor->createToken('TestToken')->plainTextToken;
 
-        // Creamos una empresa para actualizar
+        
         $company = Company::create([
             'name' => 'Old Company',
             'phone1' => '111111111',
@@ -111,7 +111,7 @@ class CompanyTest extends TestCase
             'modality' => 'Presencial',
         ]);
 
-        // Datos actualizados para la empresa
+        
         $updatedData = [
             'name' => 'Updated Company',
             'phone1' => '222222222',
@@ -127,19 +127,19 @@ class CompanyTest extends TestCase
             'modality' => 'Hibrido',
         ];
 
-        // Realizamos la solicitud PUT para actualizar la empresa
+        
         $response = $this->putJson("/api/company/{$company->id}", $updatedData, [
             'Authorization' => 'Bearer ' . $token
         ]);
 
-        // Verificamos que la respuesta sea correcta
+        
         $response->assertStatus(200)
             ->assertJsonFragment([
                 'name' => 'Updated Company',
                 'email' => 'updated@company.com',
             ]);
 
-        // Comprobamos que los datos están actualizados en la base de datos
+        
         $this->assertDatabaseHas('companies', $updatedData);
     }
 
@@ -147,11 +147,11 @@ class CompanyTest extends TestCase
     /** @test */
     public function test_delete_company(): void
     {
-        // Creamos un profesor para autenticar
+        
         $professor = Professor::factory()->create();
         $token = $professor->createToken('TestToken')->plainTextToken;
 
-        // Creamos una empresa para eliminar
+        
         $company = Company::create([
             'name' => 'Test Company',
             'phone1' => '333333333',
@@ -167,15 +167,15 @@ class CompanyTest extends TestCase
             'modality' => 'Remoto',
         ]);
 
-        // Realizamos la solicitud DELETE para eliminar la empresa
+        
         $response = $this->deleteJson("/api/company/{$company->id}", [], [
             'Authorization' => 'Bearer ' . $token
         ]);
 
-        // Verificamos que la respuesta sea correcta (204 indica que se ha eliminado correctamente)
+        
         $response->assertStatus(205);
 
-        // Comprobamos que la empresa ha sido eliminada de la base de datos
+        
         $this->assertDatabaseMissing('companies', ['id' => $company->id]);
     }
 }
